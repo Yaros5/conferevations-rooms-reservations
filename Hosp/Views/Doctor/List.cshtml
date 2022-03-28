@@ -1,0 +1,55 @@
+@model List<Doctor>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+ <header  class="bg-black text-white p-3 header" >
+        <div class  = "Foter">
+          
+          
+          <button class="index-blm">
+            <a class="Blm" asp-controller="Doctor" asp-action ="" >Home</a>
+          </button>
+      
+          <button class="index-blm">
+            <a class="Blm" asp-controller="Doctor" asp-action ="Registred" >Registred</a>
+          </button>
+      
+          <button class="index-blm">
+            <a class="Blm" asp-controller="Doctor" asp-action ="SignIn" >Sign In</a>
+          </button>
+      
+      
+        </div>
+      </header>
+
+@foreach (var doctor in Model)
+{
+ <div class="container px-4 px-md-5 py-3 bg-white shadow border-main mt-5 bort" >
+
+      <div class="row">
+        <div class="col-6  ">
+          <div class="d-flex justify-content-center flex-wrap  ">
+            <img src="@doctor.Image" alt="" class="rounded-circle pb-2 photo">
+            <h1 class = "ol text-center">@doctor.Name @doctor.LastName</h1>
+            <h4 class="text-secondary ol text-center">@doctor.Profesion</h4>
+          </div>
+        </div>
+        
+        <div class="col-6 ">
+          <div class ="  d-flex  flex-column justify-content-center h-100" >
+          
+              <h3 class="pb-1 w-100 red">Information:</h3>
+              <h3 class="text-secondary w-100 ">- @doctor.Profesion</h3>
+              <h3 class="text-secondary w-100">@doctor.PhoneNumber</h3>
+              <h3 class="pb-1 w-100 red">Work Hour:</h3>
+              <h3 class="text-secondary w-100">@doctor.StartHour - @doctor.FinishHour</h3>
+
+          
+          </div>
+        </div>
+      </div>
+ </div> 
+}
+
