@@ -1,0 +1,69 @@
+@model List<Hosp.Models.Hospital>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+    <header class="bg-black text-white p-3 header">
+        <div class="Foter">
+            <button id="Doctors" class="index-blm">
+
+                <a class="Find_button" asp-controller="Doctor" asp-action ="List" >Doctors</a>
+
+            </button>
+  
+            <button id="Registered" class="index-blm">
+                <a class="Find_button" asp-controller="Doctor" asp-action ="" >Home</a>
+            </button>
+  
+
+        </div>
+    </header>
+@foreach (var hospital in Model)
+{
+
+    <div class="container px-5 px-md-5 py-5 bg-white shadow border-main mb-5  doc" >
+
+        <div class="row">
+            <div class="col-6  ">
+                <div class="d-flex justify-content-center flex-wrap  ">
+                    <img src="@hospital.image" alt="" class="rounded-circle pb-4 photo">
+                    <h1 class = "ol text-center">@hospital.NameHospital</h1>
+                </div>
+            </div>
+          
+            <div class="col-6 ">
+                <div class ="  d-flex  flex-column justify-content-center h-100" >
+            
+
+                    <h3 class="pb-1 w-100 red">Information:</h3>
+                    <h3 class="pb-1 w-100 red">Contact Number:</h3>
+                    <h3 class="text-secondary w-100"> @hospital.ContactNumber</h3>
+                
+                    <h3 class="pb-1 w-100 red">Work Hour:</h3>
+                    <h3 class="text-secondary w-100">@hospital.StartWork - @hospital.FinishWork </h3>
+                    <a class="btn btn-danger" asp-controller="Hospital" asp-action="Delete" asp-route-id="@hospital.Id">Delete</a>
+                </div>
+            </div>
+        </div>
+      
+      
+      
+    </div>
+    
+}
+<div class="for_button mb-5">
+    <a id =  "link" class="Function" asp-controller="Hospital" asp-action ="AddHospital" onclick="yes_no()" >Add</a>
+</div>
+
+@* <div class="for_button mb-5"> *@
+@*     <a id =  "link" class="Function" asp-controller="Doctor" asp-action ="DeleteHospital" >Delete</a> *@
+@* </div> *@
+<script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+function yes_no(){
+    alert("yes or no")
+
+}
+</script>

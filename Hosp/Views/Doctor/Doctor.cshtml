@@ -1,0 +1,53 @@
+@using Microsoft.EntityFrameworkCore.Query.Internal
+@model List<Doctor>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+    <header class="bg-black text-white p-3 header">
+        <div class="Foter">
+          <button id="Doctors" class="index-blm">
+            <a class="Find_button" asp-controller="Doctor" asp-action ="" >Back</a>
+          </button>
+    
+
+        </div>
+      </header>
+@foreach (var search in Model)
+{
+
+      <div class="container px-5 px-md-5 py-5 bg-white shadow border-main mb-5 doc" >
+
+        <div class="row">
+          <div class="col-6  ">
+            <div class="d-flex justify-content-center flex-wrap  ">
+              <img src="@search.Image" alt="" class="rounded-circle pb-4 photo">
+              <h1 class = "ol text-center">@search.Name @search.LastName</h1>
+              <h4 class="text-secondary ol text-center">@search.Profesion</h4>
+            </div>
+          </div>
+          
+          <div class="col-6 ">
+            <div class ="  d-flex  flex-column justify-content-center h-100" >
+
+              
+              
+              <h3 class="pb-1 w-100 red">Information:</h3>
+          <h3 class="text-secondary w-100">- @search.Info</h3>    
+          <h3 class="text-secondary w-100 ">- @search.Profesion</h3>
+          <h3 class="text-secondary w-100">@search.PhoneNumber</h3>
+          <h3 class="text-secondary w-100">- Hospital: @search.Hospital.NameHospital</h3>
+          <h3 class="pb-1 w-100 red">Work Hour:</h3>
+          <h3 class="text-secondary w-100">@search.StartHour - @search.FinishHour </h3>
+            
+            </div>
+          </div>
+        </div>
+      
+      
+      
+      </div>
+
+}
+

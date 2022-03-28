@@ -7,4 +7,10 @@ public class Patient
     public string LastName { get; set;}
     public string PhoneNumber { get; set; }
     public string Password { get; set; }
+
+    public string Image { get; set; } = "https\\";
+    
+    public string Sex {get; set; }
+    
+    public int Year { get; set; }
 }

@@ -1,37 +1,50 @@
 @model dynamic
 
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "Hospital";
     Layout = "_Layout";
 }
 
-    <header class="bg-black text-white p-3 header">
-      <div class="Foter">
+<header class="bg-black text-white p-3 header">
+    <div class="Foter">
         <button id="Doctors" class="index-blm">
 
-            <a class="Blm" asp-controller="Doctor" asp-action ="List" >Doctors</a>
+            <a class="Find_button" asp-controller="Doctor" asp-action="List">Doctors</a>
 
         </button>
-  
-        <button id="Registered" class="index-blm">
-          <a class="Blm" asp-controller="Doctor" asp-action ="Registred" >Registred</a>
-        </button>
-  
         <button id="ID" class="index-blm">
-           <a class="Blm" asp-controller="Doctor" asp-action ="SignIn" >Sign In</a>
+            <a class="Find_button" asp-controller="Hospital" asp-action="HospitalList">Hospitals</a>
         </button>
-      </div>
-    </header>
 
-    <h1 class="h" id="h1">Search for doctors online</h1>
-    <h2 class="h" id="h2">Make an appointment without leaving home</h2>
+        <button id="Registered" class="index-blm">
+            <a class="Find_button" asp-controller="Register" asp-action="Registred">Registred</a>
+        </button>
 
-  <div class="dove">
-    <input
-      name="textfield"
-      type="text"
-      class="input"
-      placeholder="Search Doctor"
-    />
-    <button class="find">Find</button>
-  </div>
+        <button id="ID" class="index-blm">
+            <a class="Find_button" asp-controller="Register" asp-action="SignIn">Sign In</a>
+        </button>
+
+    </div>
+</header>
+
+<h1 class="h" id="h1">Search for doctors online</h1>
+<h2 class="h" id="h2">Make an appointment without leaving home</h2>
+
+<div class="dove">
+    <form asp-controller="Doctor" class="form_style" asp-action="Doctor" method="get">
+        <input
+            name="query"
+            autocomplete="off"
+            type="text"
+            class="input input-en"
+            placeholder="Search Doctor"/>
+        <button class="find" type="submit">Find</button>
+    </form>
+</div>
+<script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+<script>$('form').on('input', '.input-en', function()
+{
+	this.value = this.value.replace(/[^a-z\s]/gi, '');
+}
+);
+</script>

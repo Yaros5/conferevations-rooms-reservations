@@ -1,0 +1,67 @@
+@model Hosp.Models.Hospital
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+    <header class="bg-black text-white p-3 header">
+        <div class="Foter">
+          <button id="Doctors" class="index-blm">
+            <a class="Find_button" asp-controller="Doctor" asp-action ="" >Back</a>
+          </button>
+    
+
+        </div>
+      </header>
+<div class="dove">
+    <form asp-controller="Hospital"  class="style_form"  asp-action="AddHospital" method="post">
+
+        <input asp-for="NameHospital" type="text" class="name" placeholder="Enter Name Hospitall" value="@Model.NameHospital">
+        <span asp-validation-for="NameHospital" class="text-danger"></span>
+
+        <input asp-for="ContactNumber" type="text" class="number" placeholder="Enter Contact Number" value="@Model.ContactNumber">
+        <span asp-validation-for="ContactNumber" class="text-danger"></span>
+        
+        <input  asp-for = "StartWork" type="text" class="start" placeholder="Enter Start Work" value="@Model.StartWork">
+        <span asp-validation-for="StartWork" class="text-danger"></span>
+
+        <input asp-for = "FinishWork" type="text" class="finish" placeholder="Enter Finish Work" value="@Model.FinishWork">
+        <span asp-validation-for="FinishWork" class="text-danger"></span>
+
+        <input asp-for="image" type="text" class="image" placeholder="Enter url Image" value="@Model.image">
+        <span asp-validation-for="image" class="text-danger"></span>
+
+        <div class="for_button mb-3">
+            
+            <button id="Add_Doctor" class="index-blm" type="submit">
+                Add
+            </button>
+        </div>
+    </form>
+</div>
+<script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+<script>$('form').on('input', '.name', function()
+{
+	this.value = this.value.replace(/[^a-z\^1-9\s]/gi, '');
+}
+);
+</script>
+<script>$('form').on('input', '.number', function()
+{
+	this.value = this.value.replace(/[^0-9\+]/gi, '');
+}
+);
+</script>
+<script>$('form').on('input', '.start', function()
+{
+	this.value = this.value.replace(/[^0-9\:]/gi, '');
+}
+);
+</script>
+<script>$('form').on('input', '.finish', function()
+{
+	this.value = this.value.replace(/[^0-9\:]/gi, '');
+}
+);
+</script>
