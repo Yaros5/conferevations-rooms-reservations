@@ -1,24 +1,27 @@
-.body{
+.body {
     background-color: #B9CCE1;
     position: relative;
     height: 100vh;
 }
-#h1{
-padding-top: 20vh;
 
- position: center;
- text-align: center;
- font-size: 80px;
- color: #222222;
+#h1 {
+    padding-top: 20vh;
+
+    position: center;
+    text-align: center;
+    font-size: 80px;
+    color: #222222;
 }
-#h2{
-position: relative;
- position: center;
- text-align: center;
- font-size: 40px;
- color: #3E3E3E;
+
+#h2 {
+    position: relative;
+    position: center;
+    text-align: center;
+    font-size: 40px;
+    color: #3E3E3E;
 }
-.input{
+
+.input {
     justify-content: center;
     width: 35%;
     padding: 12px 20px;
@@ -28,13 +31,13 @@ position: relative;
     text-align: center;
     outline: none;
     border: none;
-	margin-bottom: 20px;
+    margin-bottom: 20px;
     font-size: 20px;
 
 
-
 }
-.in{
+
+.in {
     justify-content: center;
     width: 35%;
     padding: 12px 20px;
@@ -44,20 +47,21 @@ position: relative;
     text-align: center;
     outline: none;
     border: none;
-	margin-bottom: 20px;
+    margin-bottom: 20px;
     font-size: 20px;
     margin-top: -30px;
 }
+
 .dove {
-    display:flex;
-    justify-content:center;
+    display: flex;
+    justify-content: center;
 
     margin: 60px 0;
-    padding: 2px;   
-    
+    padding: 2px;
+
 }
 
-#bottom{
+#bottom {
 
     bottom: 0;
     left: 0;
@@ -67,211 +71,232 @@ position: relative;
     text-align: left;
     z-index: 99;
     height: 50px;
-    
+
 }
 
 .footer-filler {
     height: 50px;
 }
 
-.find{
-    background-color: #2780DD; 
+.find {
+    background-color: #2780DD;
     width: 7%;
     height: 60px;
     padding-left: 10px;
     text-align: center;
     color: #FFFFFF;
-    border-radius: 20px; 
+    border-radius: 20px;
     border: none;
     cursor: pointer;
     margin-left: 20px;
- 
-}
-.find:hover {
-    box-shadow: -2px 1px 2px 2px #3498db inset, -1px 1px 2px 2px #3498db;
-      
-      
+
 }
 
-.name{
-    display: flex;
-  
-    margin:2px 0;
+.find:hover {
+    box-shadow: -2px 1px 2px 2px #3498db inset, -1px 1px 2px 2px #3498db;
+
+
 }
-.h{
+
+.name {
+    display: flex;
+
+    margin: 2px 0;
+}
+
+.h {
     margin: 40px;
 }
-.Foter{
+
+.Foter {
     display: flex;
     position: absolute;
     right: 0;
     margin-right: 20px;
-    font-size: 20px; 
+    font-size: 20px;
 }
-.Blm{
-    background-color:#3498db;
+
+.Blm {
+    background-color: #3498db;
     color: #FFFFFF;
     border-radius: 5px;
     border: none;
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 
-#ID:hover{
+#ID:hover {
     box-shadow: -2px 1px 2px 2px #3498db inset, -1px 1px 2px 2px #3498db;
 
 }
 
 
-#Registered:hover{
-    box-shadow: -2px 1px 2px 2px #3498db inset, -1px 1px 2px 2px #3498db;
-  
-}
-
-#Doctors:hover{
+#Registered:hover {
     box-shadow: -2px 1px 2px 2px #3498db inset, -1px 1px 2px 2px #3498db;
 
 }
-.Sing{
+
+#Doctors:hover {
+    box-shadow: -2px 1px 2px 2px #3498db inset, -1px 1px 2px 2px #3498db;
+
+}
+
+.Sing {
 
     text-align: center;
     margin: 10px;
     font-size: 60px
 }
-.Bp{    
+
+.Bp {
     margin-left: 43%;
-    background-color:rgb(220, 190, 221);
+    background-color: rgb(220, 190, 221);
     color: white;
     border-radius: 60px;
-    border:none;
+    border: none;
     margin-top: 100px;
 }
-.got{
-    display:flex;
-    justify-content:center;
-    width:100%;
-    margin:0;
+
+.got {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
 }
-.go{
-    background-color: #2780DD; 
+
+.go {
+    background-color: #2780DD;
     width: 10%;
     height: 60px;
     padding-left: 0px;
     text-align: center;
     color: #FFFFFF;
-    border-radius: 20px; 
+    border-radius: 20px;
     border: none;
     cursor: pointer;
     margin-left: 20px;
     font-size: 20px;
 }
-.go:hover{
+
+.go:hover {
     box-shadow: -2px 1px 2px 2px #3498db inset, -1px 1px 2px 2px #3498db;
 
 }
-.txt{
+
+.txt {
     color: white;
     text-decoration: none;
 }
 
 
-#home{
+#home {
     position: relative;
 
     margin-left: 95%;
 }
-#Register{
+
+#Register {
     position: absolute;
     margin-left: 85%;
 }
-.index-blm{
-    background-color:#2780DD;
+
+.index-blm {
+    background-color: #2780DD;
     color: #FFFFFF;
     border-radius: 5px;
     border: none;
-    text-decoration: none; 
+    text-decoration: none;
     margin-left: 20px;
 }
 
-.register-Blm{
-    background-color:#2780DD;
+.register-Blm {
+    background-color: #2780DD;
     color: #FFFFFF;
     border-radius: 5px;
     border: none;
-    text-decoration: none; 
+    text-decoration: none;
     margin-left: 85.7%;
 }
 
-.reg-name{
-    background-color:#2780DD;
+.reg-name {
+    background-color: #2780DD;
     color: #FFFFFF;
     border-radius: 5px;
     border: none;
-    text-decoration: none; 
+    text-decoration: none;
 }
-.header{
+
+.header {
     position: relative;
     height: 60px;
 }
-.reg-head{
+
+.reg-head {
     display: flex;
     justify-content: center;
     margin-top: 99px;
-    
+
 
 }
-.Sing{
+
+.Sing {
     color: #3E3E3E;
 
-    
+
     border-radius: 35px;
     width: 450px;
     font-size: 100px;
 }
-.button-register{
+
+.button-register {
     display: flex;
     justify-content: center;
-    
+
 }
-.register-blm{
-    
+
+.register-blm {
+
     background-color: #2780DD;
     width: 10%;
     height: 60px;
     border-radius: 35px;
     font-size: 25px;
 }
-.register-a-blm{
+
+.register-a-blm {
     text-decoration: none;
     color: white;
 }
 
-.photo{
+.photo {
     width: 80%;
-    
+
 }
 
-.blockdocotr{
+.blockdocotr {
     position: absolute;
-    
+
 }
-.ol{
-    
+
+.ol {
+
     width: 100%;
 }
-.bort{
+
+.bort {
     display: flex;
     justify-content: center;
 
     border-radius: 25px;
 }
-.last{
+
+.last {
     height: 100%;
     margin-top: 100px;
 
 }
 
-.main{
+.main {
     position: absolute;
     display: flex;
     justify-content: right;
@@ -280,35 +305,40 @@ position: relative;
     margin-left: 15vh;
 
 }
-.but-com{
-margin-left: 170vh;
-margin-top: 40vh;
-border-radius: 25px;
-width: 300px;
-color: white;
-border: none;
-background-color:  #2780DD;
+
+.but-com {
+    margin-left: 170vh;
+    margin-top: 40vh;
+    border-radius: 25px;
+    width: 300px;
+    color: white;
+    border: none;
+    background-color: #2780DD;
 }
-.but-com:hover{
+
+.but-com:hover {
     box-shadow: -2px 1px 2px 2px #3498db inset, -1px 1px 2px 2px #3498db;
-            
+
 }
-.lot{
-    
+
+.lot {
+
     display: flex;
 
     justify-content: space-between;
-    
+
 }
 
-.geter{
-    
+.geter {
+
     margin-left: 20%;
 }
-.geer{
+
+.geer {
     margin-right: 20%;
 }
-.int{
+
+.int {
 
     width: 27%;
     padding: 12px 20px;
@@ -322,72 +352,82 @@ background-color:  #2780DD;
     font-size: 20px;
 }
 
-.form_style{
+.form_style {
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.Error_text{
+
+.Error_text {
     display: flex;
     justify-content: center;
     margin-top: 5%;
     font-size: 80px;
 }
-.Error{
+
+.Error {
     display: flex;
     justify-content: center;
     color: black;
     margin-top: 5%;
     font-size: 300px;
 }
-.Find_button{
+
+.Find_button {
     border: none;
     text-decoration: none;
     color: white;
     font-size: 20px;
 
 }
-.Find_button:hover{
+
+.Find_button:hover {
     color: white;
 }
-.doc{
+
+.doc {
     margin-top: 4.5%;
     border-radius: 25px;
     display: flex;
     justify-content: center;
-    
+
 }
-#add{
+
+#add {
     display: flex;
     justify-content: center;
     margin-left: 45%;
-    width:10%;
+    width: 10%;
     height: 5%;
     text-align: center;
     font-size: 30px;
     border-radius: 25px;
     border: none;
-    background-color:  #2780DD;
+    background-color: #2780DD;
 
 }
-.for_button{
+
+.for_button {
     display: flex;
     justify-content: center;
     width: 100%;
 }
-#Add{
+
+#Add {
     height: 80px;
     width: 250px;
     font-size: 20px;
     border-radius: 55px;
 }
-.style_form{
+
+.style_form {
     width: 100%;
     height: 100%;
 
-    
+
 }
-.name{
+
+.name {
     width: 60%;
     display: flex;
     justify-content: center;
@@ -399,7 +439,8 @@ background-color:  #2780DD;
     text-align: center;
     margin-left: 20%;
 }
-.number{
+
+.number {
     width: 60%;
     display: flex;
     justify-content: center;
@@ -411,7 +452,8 @@ background-color:  #2780DD;
     text-align: center;
     margin-left: 20%;
 }
-.start{
+
+.start {
     width: 60%;
     display: flex;
     justify-content: center;
@@ -423,7 +465,8 @@ background-color:  #2780DD;
     text-align: center;
     margin-left: 20%;
 }
-.finish{
+
+.finish {
     width: 60%;
     display: flex;
     justify-content: center;
@@ -435,7 +478,8 @@ background-color:  #2780DD;
     text-align: center;
     margin-left: 20%;
 }
-.image{
+
+.image {
     width: 60%;
     display: flex;
     justify-content: center;
@@ -447,26 +491,29 @@ background-color:  #2780DD;
     text-align: center;
     margin-left: 20%;
 }
-#Add_Doctor{
+
+#Add_Doctor {
     margin-top: 5%;
-        height: 80px;
+    height: 80px;
     width: 250px;
     font-size: 20px;
     border-radius: 55px;
 }
-.Function{
+
+.Function {
     font-size: 35px;
     width: 100%;
     height: 100%;
     text-decoration: none;
     color: #fff;
 }
-.Function:hover{
+
+.Function:hover {
     color: #fff;
 }
 
 
-#link{
+#link {
     margin-left: 0%;
     width: 20%;
     height: 40%;
@@ -476,3 +523,84 @@ background-color:  #2780DD;
     font-size: 20px;
     background-color: black;
 }
+
+
+
+.big {
+  font-size: 1.2em;
+}
+
+
+
+.custom-dropdown {
+
+    margin-left: 43%;
+    margin-top: 5%;
+    border: none;
+     list-style-type: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  display: inline-block;
+  vertical-align: middle;
+
+}
+
+.custom-dropdown select {
+  cursor:pointer;
+  background-color: #2980b9;
+  color: #fff;
+  font-size: inherit;
+  padding: .5em;
+  padding-right: 2.5em;	
+  border: 0;
+  margin: 0;
+  border-radius: 7px;
+  text-indent: 0.01px;
+  text-overflow: '';
+  -webkit-appearance: button; 
+}
+
+.custom-dropdown::before,
+.custom-dropdown::after {
+  content: "";
+ -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+  pointer-events: none;
+}
+
+.custom-dropdown::after { 
+  content: "\25BC";
+  height: 1em;
+  font-size: .625em;
+  line-height: 1;
+  right: 1.2em;
+  top: 50%;
+  margin-top: -.5em;
+}
+
+.custom-dropdown::before { 
+  width: 2em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.custom-dropdown select[disabled] {
+  color: rgba(0,0,0,.3);
+}
+
+.custom-dropdown select[disabled]::after {
+  color: rgba(0,0,0,.1);
+}
+
+.custom-dropdown::before {
+  background-color: rgba(0,0,0,.15);
+}
+
+.custom-dropdown::after {
+  color: rgba(0,0,0,.4);
+}
+

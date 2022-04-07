@@ -1,52 +1,52 @@
-@model Patient
-
-@{
-    ViewBag.Title = "title";
-    Layout = "_Layout";
-}
-<header  class="bg-black text-white p-3 header">
-    <div class  = "Foter">
-          
-          
-      
-        <button class="index-blm">
-            <a class="Find_button" asp-controller="Doctor" asp-action ="" >Home</a>
-        </button>
-      
-        <button class="index-blm">
-            <a class="Find_button" asp-controller="Register" asp-action ="SignIn" >Sign In</a>
-        </button>
-      
-      
-    </div>
-</header>
-
-
-
-
-
-<div class="reg-head">
-    <h1 class = "Sing">Register</h1>
-</div>
-<form asp-controller="Register"  class="style_form"  asp-action="Registred" method="post">
-    <div class = "dove lot">
-   
-        <input  asp-for="Name" type="text" class="int geter"  placeholder="Enter your name" value="@Model.Name" >
-        <input  asp-for="LastName" type="text" class="int geer"  placeholder="Enter your lastname" value="@Model.LastName">
-        <input  asp-for="Year" type="text" class="int geer"  placeholder="Enter your lastname" value="@Model.Year">
-    </div>
-    <div class = "dove lot">
-   
-        <input  asp-for="Sex" type="text" class="int geer"  placeholder="Enter your sex" value="@Model.Sex">
-        <input  asp-for = "Image" type="text" class="in"  placeholder="Enter your password" value="@Model.Image">
-        <input  asp-for="PhoneNumber" type="text" class="int geer"  placeholder="Enter your phone" value="@Model.PhoneNumber">
-        <input  asp-for = "Password" type="text" class="in"  placeholder="Enter your password" value="@Model.Password">
-    </div>
-    <div class = button-register>
-        <button class = "go" type="submit"> 
-            
-                Lets Go
-
-        </button>
-    </div>
-    </form>
+@* @model Patient *@
+@* *@
+@* @{ *@
+@*     ViewBag.Title = "title"; *@
+@*     Layout = "_Layout"; *@
+@* } *@
+@* <header  class="bg-black text-white p-3 header"> *@
+@*     <div class  = "Foter"> *@
+@*            *@
+@*            *@
+@*        *@
+@*         <button class="index-blm"> *@
+@*             <a class="Find_button" asp-controller="Doctor" asp-action ="" >Home</a> *@
+@*         </button> *@
+@*        *@
+@*         <button class="index-blm"> *@
+@*             <a class="Find_button" asp-controller="Register" asp-action ="SignIn" >Sign In</a> *@
+@*         </button> *@
+@*        *@
+@*        *@
+@*     </div> *@
+@* </header> *@
+@* *@
+@* *@
+@* *@
+@* *@
+@* *@
+@* <div class="reg-head"> *@
+@*     <h1 class = "Sing">Register</h1> *@
+@* </div> *@
+@* <form asp-controller="Register"  class="style_form"  asp-action="Registred" method="post"> *@
+@*     <div class = "dove lot"> *@
+@*     *@
+@*         <input  asp-for="Name" type="text" class="int geter"  placeholder="Enter your name" value="@Model.Name" > *@
+@*         <input  asp-for="LastName" type="text" class="int geer"  placeholder="Enter your lastname" value="@Model.LastName"> *@
+@*         <input  asp-for="Year" type="text" class="int geer"  placeholder="Enter your lastname" value="@Model.Year"> *@
+@*     </div> *@
+@*     <div class = "dove lot"> *@
+@*     *@
+@*         <input  asp-for="Sex" type="text" class="int geer"  placeholder="Enter your sex" value="@Model.Sex"> *@
+@*         <input  asp-for = "Image" type="text" class="in"  placeholder="Enter your password" value="@Model.Image"> *@
+@*         <input  asp-for="PhoneNumber" type="text" class="int geer"  placeholder="Enter your phone" value="@Model.PhoneNumber"> *@
+@*         <input  asp-for = "Password" type="text" class="in"  placeholder="Enter your password" value="@Model.Password"> *@
+@*     </div> *@
+@*     <div class = button-register> *@
+@*         <button class = "go" type="submit">  *@
+@*              *@
+@*                 Lets Go *@
+@* *@
+@*         </button> *@
+@*     </div> *@
+@*     </form> *@

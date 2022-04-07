@@ -1,0 +1,87 @@
+@using System.Linq
+@model Hosp.Controllers.AddDoctorViewModel
+
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<header class="bg-black text-white p-3 header">
+    <div class="Foter">
+        <button id="Doctors" class="index-blm">
+            <a class="Find_button" asp-controller="Doctor" asp-action="">Back</a>
+        </button>
+
+
+    </div>
+</header>
+<div class="dove">
+    <form asp-controller="Doctor" class="style_form" asp-action="EditDoctor" method="post">
+
+        <input name="Name" type="text" class="name" placeholder="Enter Name " value="@Model.Doctor.Name">
+
+
+        <input name="LastName" type="text" class="name" placeholder="Enter LastName" value="@Model.Doctor.LastName">
+        <input name="Profesion" type="text" class="name" placeholder="Enter Profesion " value="@Model.Doctor.Profesion">
+        <input name="PhoneNumber" type="text" class="number"  placeholder="Enter Phone" VALUE="@Model.Doctor.PhoneNumber">
+        <input name="PhoneInfo" type="text" class="number"  placeholder="Enter Ingfo" VALUE="@Model.Doctor.Info">
+        <span class="custom-dropdown big">  
+            <select  name="HospitalId" >  
+                <option value="">--Please choose an option--</option>
+                @foreach (var hospital in Model.Hospitals)
+                {
+                    <option value="@hospital.Id">@hospital.NameHospital</option>
+                }
+		</select> 
+	   </span> 
+
+        <input name="StartHour" type="text" class="start" placeholder="Enter Start Work" value="@Model.Doctor.StartHour">
+
+
+        <input name="FinishHour" type="text" class="finish" placeholder="Enter Finish Work" value="@Model.Doctor.FinishHour">
+
+
+        <input name="Image" type="text" class="image" placeholder="Enter url Image" value="@Model.Doctor.Image">h
+
+        
+        <div class="for_button mb-3">
+
+            <button id="Add_Doctor" class="index-blm" type="submit">
+                Add
+            </button>
+        </div>
+    </form>
+</div>
+<script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+<script>$('form').on('input', '.name', function()
+{
+	this.value = this.value.replace(/[^a-z\^1-9\s]/gi, '');
+}
+);
+</script>
+<script>$('form').on('input', '.number', function()
+{
+	this.value = this.value.replace(/[^0-9\+]/gi, '');
+}
+);
+</script>
+<script>$('form').on('input', '.start', function()
+{
+	this.value = this.value.replace(/[^0-9\:]/gi, '');
+	
+}
+);
+
+</script>
+<script>$('form').on('input', '.finish', function()
+{
+	this.value = this.value.replace(/[^0-9\:]/gi, '');
+}
+);
+</script>
+<script>
+$(document).pn('input', '.start', function(){
+    $('input.timepicker').timepicker({});
+});
+</script>

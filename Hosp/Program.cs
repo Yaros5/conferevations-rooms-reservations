@@ -5,14 +5,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<ApplicationDbContext>(options=>options.UseSqlite("DataSource=app.db;Cache=Shared"));
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite("DataSource=app.db;Cache=Shared"));
 
 var app = builder.Build();
-
-{
-    using var scope = app.Services.CreateScope();
-    await scope.ServiceProvider.GetRequiredService<ApplicationDbContext>().Database.MigrateAsync();
-}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -30,7 +25,7 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Doctor}/{action=Index}/{id?}");
+    "default",
+    "{controller=Doctor}/{action=Index}/{id?}");
 
 app.Run();

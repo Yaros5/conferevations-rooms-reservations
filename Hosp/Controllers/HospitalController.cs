@@ -2,8 +2,6 @@ using Hosp.Data;
 using Hosp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Data;
-using System.ComponentModel.DataAnnotations;
 
 namespace Hosp.Controllers;
 
@@ -46,21 +44,37 @@ public class HospitalController : Controller
     }
 
 
-
     public async Task<IActionResult> Delete(int id)
     {
-        
         var del = await _dbContext.Hospitals.SingleOrDefaultAsync(x => x.Id == id);
-        var dem = _dbContext.Hospitals.Find(id);
-        if (del.Id  == dem.Id)
-        {
-            Console.WriteLine(del);
-            _dbContext.Hospitals.Remove(del);
-         await _dbContext.SaveChangesAsync();
-        }
+
+
+        _dbContext.Hospitals.Remove(del);
+        await _dbContext.SaveChangesAsync();
+
 
         return RedirectToAction(nameof(HospitalList));
-    } 
-    
-    
+    }
+
+
+    public async Task<IActionResult> Edit(int id)
+    {
+        var edit = await _dbContext.Hospitals.SingleOrDefaultAsync(x => x.Id == id);
+        return View(edit);
+    }
+
+    public async Task<IActionResult> EditHospital(Hospital body)
+    {
+        if (ModelState.IsValid)
+        {
+            _dbContext.Entry(body).State = EntityState.Modified;
+            _dbContext.Hospitals.Update(body);
+
+            await _dbContext.SaveChangesAsync();
+
+            return RedirectToAction("Hospital", new {id = body.Id});
+        }
+
+        return View(body);
+    }
 }

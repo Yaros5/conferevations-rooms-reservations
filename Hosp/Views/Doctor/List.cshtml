@@ -3,50 +3,49 @@
     <div class="Foter">
         <button id="Doctors" class="index-blm">
 
-            <a class="Find_button" asp-controller="Hospital" asp-action ="HospitalList" >Hospital</a>
+            <a class="Find_button" asp-controller="Hospital" asp-action="HospitalList">Hospital</a>
 
         </button>
-  
+
         <button id="Registered" class="index-blm">
-            <a class="Find_button" asp-controller="Doctor" asp-action ="" >Home</a>
+            <a class="Find_button" asp-controller="Doctor" asp-action="">Home</a>
         </button>
-  
+
 
     </div>
 </header>
 @foreach (var doctor in Model)
 {
-
-      <div class="container px-5 px-md-5 py-5 bg-white shadow border-main mb-5 doc" >
+    <div class="container px-5 px-md-5 py-5 bg-white shadow border-main mb-5 doc">
 
         <div class="row">
-          <div class="col-6  ">
-            <div class="d-flex justify-content-center flex-wrap  ">
-              <img src="@doctor.Image" alt="" class="rounded-circle pb-4 photo">
-              <h1 class = "ol text-center">@doctor.Name @doctor.LastName</h1>
-              <h4 class="text-secondary ol text-center">@doctor.Profesion</h4>
+            <div class="col-6  ">
+                <div class="d-flex justify-content-center flex-wrap  ">
+                    <img src="@doctor.Image" alt="" class="rounded-circle pb-4 photo">
+                    <h1 class="ol text-center">@doctor.Name @doctor.LastName</h1>
+                    <h4 class="text-secondary ol text-center">@doctor.Profesion</h4>
+                </div>
             </div>
-          </div>
-          
-          <div class="col-6 ">
-            <div class ="  d-flex  flex-column justify-content-center h-100" >
 
-              
-              
-              <h3 class="pb-1 w-100 red">Information:</h3>
-  
-          <h3 class="text-secondary w-100 ">- @doctor.Profesion</h3>
-          <h3 class="text-secondary w-100">@doctor.PhoneNumber</h3>
+            <div class="col-6 ">
+                <div class="  d-flex  flex-column justify-content-center h-100">
 
-          <h3 class="pb-1 w-100 red">Work Hour:</h3>
-          <h3 class="text-secondary w-100">@doctor.StartHour - @doctor.FinishHour </h3>
-            
+
+                    <h3 class="pb-1 w-100 red">Information:</h3>
+
+                    <h3 class="text-secondary w-100 ">- @doctor.Profesion</h3>
+                    <h3 class="text-secondary w-100">@doctor.PhoneNumber</h3>
+
+                    <h3 class="pb-1 w-100 red">Work Hour:</h3>
+                    <h3 class="text-secondary w-100">@doctor.StartHour - @doctor.FinishHour </h3>
+                    <a class="btn btn-danger mb-2" asp-controller="Doctor" asp-action="Delete" asp-route-id="@doctor.ID">Delete</a>
+            <a class="btn btn-primary " asp-controller="Doctor" asp-action="Edit" asp-route-id="@doctor.ID">Edit</a>
+                </div>
             </div>
-          </div>
         </div>
-      
-      
-      
-      </div>
 
+    </div>
 }
+<div class="for_button mb-4 mt-5">
+    <a id="link" class="Function" asp-controller="Doctor" asp-action="AddDoctor">Add</a>
+</div>
