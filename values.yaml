@@ -1,0 +1,9 @@
+endpoints:
+  - name: default
+    port: 8080
+    ingress:
+      domain: hosp.dev.loyaltydrive.io
+      environment: prod
+      class: qa
+      letsencrypt: true
+
