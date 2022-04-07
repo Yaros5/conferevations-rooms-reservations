@@ -7,3 +7,6 @@ endpoints:
       class: qa
       letsencrypt: true
 
+deploy:
+  k8sNamespace: misc
+  k8sUser: gitlab
