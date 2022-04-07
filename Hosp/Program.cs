@@ -9,6 +9,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(options=>options.UseSqlite("
 
 var app = builder.Build();
 
+{
+    using var scope = app.Services.CreateScope();
+    await scope.ServiceProvider.GetRequiredService<ApplicationDbContext>().Database.MigrateAsync();
+}
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
