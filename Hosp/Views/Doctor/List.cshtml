@@ -39,7 +39,8 @@
                     <h3 class="pb-1 w-100 red">Work Hour:</h3>
                     <h3 class="text-secondary w-100">@doctor.StartHour - @doctor.FinishHour </h3>
                     <a class="btn btn-danger mb-2" asp-controller="Doctor" asp-action="Delete" asp-route-id="@doctor.ID">Delete</a>
-            <a class="btn btn-primary " asp-controller="Doctor" asp-action="Edit" asp-route-id="@doctor.ID">Edit</a>
+                    <a class="btn btn-primary  mb-2" asp-controller="Doctor" asp-action="Edit" asp-route-id="@doctor.ID">Edit</a>
+                                        <a class="btn btn-success " asp-controller="Doctor" asp-action="Appoitment" asp-route-id="@doctor.ID">Appoitment</a>
                 </div>
             </div>
         </div>

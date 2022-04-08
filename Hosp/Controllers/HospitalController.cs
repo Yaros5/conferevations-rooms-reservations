@@ -77,4 +77,9 @@ public class HospitalController : Controller
 
         return View(body);
     }
+
+    public IActionResult Appoitment()
+    {
+        throw new NotImplementedException();
+    }
 }

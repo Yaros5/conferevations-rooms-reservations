@@ -112,6 +112,55 @@ public class DoctorController : Controller
             return RedirectToAction("NewDoctor", new {id = body.ID});
         }
 
-        return RedirectToAction("Sad");
+
+        
+        return RedirectToAction("Edit", new {id = body.ID});
+        
     }
+
+
+    public async Task<IActionResult> Appoitment(int id )
+    {
+        var appoint = await _dbContext.Doctors.SingleOrDefaultAsync(x => x.ID == id);
+
+
+
+        return View(appoint);
+
+    }
+
+    public async Task<IActionResult> Appo(Appointment more, Doctor some)
+    {
+        more.DoctorId = some.ID;
+        if (_dbContext.Appointment.Where( x => x.DoctorId == more.DoctorId).Any(x=>x.Appoint == more.Appoint ))
+        //if (_dbContext.Appointment.Any(x => x.Appoint != more.Appoint) &&
+          //  _dbContext.Appointment.Any(x => x.DoctorId != more.DoctorId))
+        {
+
+                    return RedirectToAction("sad");
+                
+        }
+              more.DoctorId = some.ID;
+                more.Begin = more.Appoint;
+                more.End = more.Begin + new TimeSpan(0, 0, 30, 0);
+        
+                    _dbContext.Appointment.Add(more);
+                    _dbContext.Appointment.Update(more);
+                    await _dbContext.SaveChangesAsync();
+    
+
+           
+              
+          
+
+
+        return RedirectToAction("List");
+    }
+
+
+
+
+
+
+
 }

@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace Hosp.Models;
 
 public class Doctor
@@ -17,4 +19,14 @@ public class Doctor
     public string? NickName { get; set; }
 
     public string? NickNameFlip { get; set; }
+    
+    public Appointment? Appointment { get; set;}
+    
+
+    
+    
+    public  string? NamePatient { get; set; }
+    public string? ContactPatient {get; set; }
+    
+
 }
