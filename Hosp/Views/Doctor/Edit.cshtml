@@ -18,7 +18,7 @@
 </header>
 <div class="dove">
     <form asp-controller="Doctor" class="style_form" asp-action="EditDoctor" method="post">
-
+        <input name = ID  type="hidden" value="@Model.Doctor.ID">
         <input name="Name" type="text" class="name" placeholder="Enter Name " value="@Model.Doctor.Name">
 
 
