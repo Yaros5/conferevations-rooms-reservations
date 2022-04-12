@@ -9,9 +9,11 @@ public class Appointment
     public Doctor? Doctor {get; set; }
     public int DoctorId { get;set;}
     
-    public DateTime? Begin { get; set; }
+    public string? Info { get; set; }
     
     public DateTime? End {get; set;}
     
+    public string NamePatient {get; set; }
     
+    public string ContactPatient {get; set; }
 }

@@ -21,7 +21,14 @@ public class HospitalController : Controller
         return View(hospital);
     }
 
-    public async Task<IActionResult> AddHospital(Hospital body)
+    [HttpGet]
+    public async Task<IActionResult> Add()
+    {
+        return View(new Hospital());
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Add(Hospital body)
     {
         if (ModelState.IsValid)
         {
@@ -32,14 +39,14 @@ public class HospitalController : Controller
             return RedirectToAction("Hospital", new {id = body.Id});
         }
 
-
         return View(body);
     }
 
     public async Task<IActionResult> Hospital(int id)
     {
         var hospital = await _dbContext.Hospitals.SingleOrDefaultAsync(x => x.Id == id);
-
+        if (hospital == null)
+            return RedirectToAction("HospitalList");
         return View(hospital);
     }
 
@@ -57,13 +64,17 @@ public class HospitalController : Controller
     }
 
 
+    [HttpGet]
     public async Task<IActionResult> Edit(int id)
     {
         var edit = await _dbContext.Hospitals.SingleOrDefaultAsync(x => x.Id == id);
+        if (edit == null)
+            return RedirectToAction("HospitalList");
         return View(edit);
     }
 
-    public async Task<IActionResult> EditHospital(Hospital body)
+    [HttpPost]
+    public async Task<IActionResult> Edit(Hospital body)
     {
         if (ModelState.IsValid)
         {

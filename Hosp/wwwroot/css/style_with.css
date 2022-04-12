@@ -1,6 +1,6 @@
-body{
+﻿body{
     width: 100%;
-}  
+}
 .start{
     width: 100%;
 }
@@ -18,4 +18,13 @@ body{
 .input_size{
     margin-bottom: 8%;
     text-align: center;
+}
+.doc{
+    
+    margin-top: 8%;
+    
+    border-radius: 25px;
+}
+#bottom{
+    margin-top: 8%;
 }

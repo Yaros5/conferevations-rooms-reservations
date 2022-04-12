@@ -5,7 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite("DataSource=app.db;Cache=Shared"));
+builder.Services.AddDbContext<ApplicationDbContext>(options => 
+    options.UseSqlServer("Server=localhost;Database=Hospital;Integrated Security=True"));
 
 var app = builder.Build();
 

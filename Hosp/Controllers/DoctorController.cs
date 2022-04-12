@@ -1,7 +1,10 @@
 using Hosp.Data;
 using Hosp.Models;
+using Microsoft.AspNetCore.Connections;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 
 namespace Hosp.Controllers;
 
@@ -52,20 +55,21 @@ public class DoctorController : Controller
         return View(search);
     }
 
-
+   
     public async Task<IActionResult> AddDoctor(Doctor body)
     {
-        
         if (ModelState.IsValid)
         {
+            body.ID = 0;
             body.NickName = $"{body.Name} {body.LastName}";
             body.NickNameFlip = $"{body.LastName} {body.Name}";
+
             _dbContext.Doctors.Add(body);
             await _dbContext.SaveChangesAsync();
 
             return RedirectToAction("NewDoctor", new {id = body.ID});
         }
-        
+
         var viewModel = new AddDoctorViewModel();
         viewModel.Doctor = body;
         viewModel.Hospitals = await _dbContext.Hospitals.ToListAsync();
@@ -81,7 +85,7 @@ public class DoctorController : Controller
 
     public async Task<IActionResult> Delete(int id)
     {
-         var del = await _dbContext.Doctors.SingleOrDefaultAsync(x => x.ID == id );
+        var del = await _dbContext.Doctors.SingleOrDefaultAsync(x => x.ID == id);
 
 
         _dbContext.Doctors.Remove(del);
@@ -92,7 +96,7 @@ public class DoctorController : Controller
     }
 
     public async Task<IActionResult> Edit(int id)
-    {        
+    {
         var edit = await _dbContext.Doctors.SingleOrDefaultAsync(x => x.ID == id);
 
         var viewModel = new AddDoctorViewModel();
@@ -100,6 +104,7 @@ public class DoctorController : Controller
         viewModel.Hospitals = await _dbContext.Hospitals.ToListAsync();
         return View(viewModel);
     }
+
     public async Task<IActionResult> EditDoctor(Doctor body)
     {
         if (ModelState.IsValid)
@@ -113,54 +118,55 @@ public class DoctorController : Controller
         }
 
 
-        
         return RedirectToAction("Edit", new {id = body.ID});
-        
     }
 
-
-    public async Task<IActionResult> Appoitment(int id )
+    [HttpGet]
+    public async Task<IActionResult> Appoitment(int id)
     {
         var appoint = await _dbContext.Doctors.SingleOrDefaultAsync(x => x.ID == id);
-
-
-
-        return View(appoint);
-
-    }
-
-    public async Task<IActionResult> Appo(Appointment more, Doctor some)
-    {
-        more.DoctorId = some.ID;
-        if (_dbContext.Appointment.Where( x => x.DoctorId == more.DoctorId).Any(x=>x.Appoint == more.Appoint ))
-        //if (_dbContext.Appointment.Any(x => x.Appoint != more.Appoint) &&
-          //  _dbContext.Appointment.Any(x => x.DoctorId != more.DoctorId))
+        if (appoint == null)
         {
-
-                    return RedirectToAction("sad");
-                
+            return RedirectToAction("List");
         }
-              more.DoctorId = some.ID;
-                more.Begin = more.Appoint;
-                more.End = more.Begin + new TimeSpan(0, 0, 30, 0);
-        
-                    _dbContext.Appointment.Add(more);
-                    _dbContext.Appointment.Update(more);
-                    await _dbContext.SaveChangesAsync();
-    
+        return View(appoint);
+    }
+    [HttpPost]
+    public async Task<IActionResult> Appoitment(Appointment appointment)
+    {
+        var doc =   _dbContext.Doctors.Find(appointment.DoctorId);
+        appointment.Id = 0;
+        appointment.End = appointment.Appoint + new TimeSpan(0, 0, 30, 0);
+        var start = DateTime.Parse(doc.StartHour);
+        var finish = DateTime.Parse(doc.FinishHour);
+        if (finish.Hour > appointment.Appoint.Value.Hour && start.Hour <= appointment.Appoint.Value.Hour)
+        {
+            appointment.DoctorId = doc.ID;
+            if (_dbContext.Appointment.Where(x => x.DoctorId == appointment.DoctorId).Any(x => x.Appoint == appointment.Appoint))
+                    
+            {
+                return View();
+            }
 
-           
-              
-          
+            _dbContext.Appointment.Add(appointment);
+            // _dbContext.Appointment.Update(more);
+            
+            await _dbContext.SaveChangesAsync();
 
 
-        return RedirectToAction("List");
+            return RedirectToAction("Done");
+        }
+
+        return RedirectToAction("Appoitment", new {id = doc.ID});
     }
 
-
-
-
-
-
-
+    public IActionResult Done()
+    {
+        return View();
+    }
+    [HttpGet]
+    public async  Task<IActionResult> Edt()
+    {
+        return View();
+    }
 }

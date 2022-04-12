@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="DoctroDataBase" uuid="66c9a3a0-a17a-44c8-97b1-bf5ed7d4da3d">
-      <driver-ref>sqlite.xerial</driver-ref>
+    <data-source source="LOCAL" name="Microsoft SQL Server (jTds) - Hospital@localhost" uuid="364257a1-daff-4a30-919b-ba934be4cac5">
+      <driver-ref>sqlserver.jtds</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/Hosp/app.db</jdbc-url>
+      <jdbc-driver>net.sourceforge.jtds.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:jtds:sqlserver://localhost/Hospital</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
-      <libraries>
-        <library>
-          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.36.0.3/sqlite-jdbc-3.36.0.3.jar</url>
-        </library>
-      </libraries>
+      <driver-properties>
+        <property name="integratedSecurity" value="true" />
+      </driver-properties>
     </data-source>
   </component>
 </project>

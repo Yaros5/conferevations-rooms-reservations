@@ -7,22 +7,16 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.3">
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.4">
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.3" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.3" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.4" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.4" />
     </ItemGroup>
 
     <ItemGroup>
-      <AdditionalFiles Include="Views\Hospital\AddHospital.cshtml" />
-      <AdditionalFiles Include="Views\Hospital\DeleteHospital.cshtml" />
-      <AdditionalFiles Include="Views\Hospital\Hospital.cshtml" />
-      <AdditionalFiles Include="Views\Hospital\HospitalList.cshtml" />
-    </ItemGroup>
-
-    <ItemGroup>
+      <Folder Include="Migrations" />
       <Folder Include="Pages" />
     </ItemGroup>
 

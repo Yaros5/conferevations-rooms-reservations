@@ -26,8 +26,7 @@
         <div class="row">
             <div class="col-6  ">
                 <div class="d-flex justify-content-center flex-wrap  ">
-                    <img src="@Model.Image" alt="" class="rounded-circle pb-4 photo"> 
-                    <h1 class="ol text-center">@Model.Name @Model.LastName</h1>
+                    <img src="@Model.Image" alt="" class="rounded-circle pb-4 photo">
                     <h4 class="text-secondary ol text-center">@Model.Profesion</h4>
                 </div>
             </div>
@@ -42,34 +41,39 @@
                     <h3 class="text-secondary w-100">@Model.PhoneNumber</h3>
                     <h3 class="text-secondary w-100">@Model.Info</h3>
                     <h3 class="pb-1 w-100 red">Work Hour:</h3>
-                    @* <h3 class="text-secondary w-100">@Model.StartHour - @Model.FinishHour </h3> *@
- 
+                    <h3 class="text-secondary w-100">@Model.StartHour - @Model.FinishHour </h3>
+
                 </div>
             </div>
         </div>
 
     </div>
-<form asp-controller="Doctor" class="style_form" asp-action="Appo" method="post">
-    <div class = "test">
-         <input name="NamePatient" type="text" class="name" placeholder="Enter Your Name " value="@Model.NamePatient" required>
-        <span class = "span"> </span>
-           </div>
-       
-    <div class="test">
-        <input name="ContactPatient" type="text" class="name" placeholder="Enter ContactNumber" value="@Model.ContactPatient)" required>
-        <span class = "span"></span>
-    </div>
-            <input    name="ID" type="hidden"   value="@Model.ID" >
+    <form asp-controller="Doctor" class="style_form" asp-action="Appoitment" method="post">
         <div class="test">
-            <input    name="Appoint" type="datetime-local" class="name"  value="@Model.Appointment" required>
-            <span class = "span"></span>
+            <input name="NamePatient" type="text" class="name" placeholder="Enter Your Name " value="@Model.Appointment" required>
+            <span class="span"> </span>
         </div>
-                <div class="for_button mb-5">
 
-            <button  class="btn btn-dark" type="submit">
+        <div class="test">
+            <input name="ContactPatient" type="text" class="name" placeholder="Enter ContactNumber" value="@Model.Appointment" required>
+            <span class="span"></span>
+        </div>
+         <div class="test">
+                    <input name="Info" type="text" class="name" placeholder="Enter Info" value="@Model.Appointment" required>
+                    <span class="span"></span>
+                </div>
+        <input name="DoctorId" type="hidden" value="@Model.ID">
+
+        <div class="test">
+            <input selected="@Model.Appointment" name="Appoint" type="datetime-local" min="@DateTime.Now.ToString("yyyy-MM-ddThh:mm")" step="" class="name" value="@Model.Appointment" required>
+            <span class="span">@Html.ValidationMessage("Appoint")</span>
+        </div>
+        <div class="for_button mb-5">
+
+            <button class="mdl btn-dark " type="submit">
                 Appoint
             </button>
         </div>
-</form>
+    </form>
 
 </div>

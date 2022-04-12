@@ -24,9 +24,5 @@ public class Doctor
     
 
     
-    
-    public  string? NamePatient { get; set; }
-    public string? ContactPatient {get; set; }
-    
 
 }
