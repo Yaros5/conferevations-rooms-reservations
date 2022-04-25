@@ -1,5 +1,5 @@
-@using System.Linq
-@model Hospital
+﻿@using System.Linq
+@model Hospital?
 
 
 @{
@@ -29,7 +29,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link disabled " asp-controller="Doctor" asp-action="">Home</a>
+              <a class="nav-link disabled " aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" asp-controller="Doctor" asp-action="List">Doctor</a>
@@ -47,46 +47,72 @@
 </header>
 
 
-<form asp-controller ="Hospital" asp-action="Add" class="container needs-validation mt-5" novalidate method="post" >
 
+
+
+
+
+
+
+
+
+<form asp-controller ="Hospital" asp-action="EditLogic" class="container needs-validation mt-5" novalidate method="post" >
+
+ 
   <div class="size">
-        
-    <label for="validationCustom01" class="form-label mt-3 ">Name Hospital</label>
-  </div>
-  <div class=" size">
-    <input name = "NameHospital" type="text" class="form-control input_size " id="validationCustom01" value="@Model.NameHospital" required>
-  </div>
-  <div class="valid-feedback">
-    Looks good!
-  </div>
-  
-  <div class="size">
-        
-    <label for="validationCustom01" class="form-label mt-3 ">Contact Number</label>
-  </div>
-  <div class=" size">
-    <input name = "ContactNumber" type="text" class="form-control input_size " id="validationCustom01" value="@Model.ContactNumber" required>
-  </div>
-  <div class="valid-feedback">
-    Looks good!
+    <label for="validationCustom02" class="form-label">Name Hospital</label>
   </div>
   <div class="size">
-    <label for="validationCustom02" class="form-label">Start Work</label>
-  </div>
-  <div class="size">
-    <input name = "StartWork" type="text" class="form-control input_size " id="validationCustom02" value="@Model.StartWork" required>
+    <input name = "NameHospital" type="text" class="form-control input_size " id="validationCustom02" value="@Model.NameHospital" required>
   </div>
   <div class="valid-feedback">
     Looks good!
 
   </div>
   <div class="size">
-    <label for="validationCustomUsername" class="form-label">Finish Work</label>
+    <label for="validationCustomUsername" class="form-label">Contact Number</label>
   </div>
   <div class="input-group has-validation">
         
     <div class="size">
-      <input name = "FinishWork" type="text" class="form-control input_size " id="validationCustom02" value="@Model.FinishWork" required>
+      <input name = "ContactNumber" type="text" class="form-control input_size " id="validationCustom02" value="@Model.ContactNumber" required>
+    </div>
+    <div class="invalid-feedback">
+      Please choose a username.
+    </div>
+  </div>
+
+ 
+  <div class="size mb-5">
+    <div class="row">
+
+      <div class="invalid-feedback">
+        Please select a valid state.
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="size">
+    <label for="validationCustomUsername" class="form-label">Start Work</label>
+  </div>
+  <div class="input-group has-validation">
+           
+    <div class="size">
+      <input name = "StartWork" type="text" class="form-control input_size " id="validationCustom02" value="@Model.StartWork" required>
+    </div>
+    <div class="invalid-feedback">
+      Please choose a username.
+    </div>
+  </div>
+  
+  <div class="size">
+    <label for="validationCustomUsername" class="form-label">Finish Work</label>
+  </div>
+  <div class="input-group has-validation">
+           
+    <div class="size">
+      <input name="FinishWork" type="text" class="form-control input_size " id="validationCustom02" value="@Model.FinishWork" required>
     </div>
     <div class="invalid-feedback">
       Please choose a username.
@@ -96,15 +122,14 @@
     <label for="validationCustomUsername" class="form-label">Image</label>
   </div>
   <div class="input-group has-validation">
-         
+             
     <div class="size">
-      <input type="text" name ="image" class="form-control input_size " id="validationCustom02" value="@Model.image" >
+      <input name="Image" type="text" class="form-control input_size " id="validationCustom02" value="@Model.image" required>
     </div>
     <div class="invalid-feedback">
       Please choose a username.
     </div>
   </div>
-  
   
   
   <div class="size">

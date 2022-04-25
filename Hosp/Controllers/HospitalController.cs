@@ -51,11 +51,16 @@ public class HospitalController : Controller
     }
 
 
-    public async Task<IActionResult> Delete(int id)
+    [HttpGet]
+    public async Task<IActionResult> Delete()
     {
-        var del = await _dbContext.Hospitals.SingleOrDefaultAsync(x => x.Id == id);
-
-
+        var doctor = await _dbContext.Hospitals.ToListAsync();     
+        return View(doctor);
+    }
+    [HttpPost]
+    public async Task<IActionResult> Delete(Hospital body)
+    {
+        var del = await _dbContext.Hospitals.SingleOrDefaultAsync(x => x.NameHospital == body.NameHospital);
         _dbContext.Hospitals.Remove(del);
         await _dbContext.SaveChangesAsync();
 
@@ -64,33 +69,55 @@ public class HospitalController : Controller
     }
 
 
+
     [HttpGet]
-    public async Task<IActionResult> Edit(int id)
+    public async Task<IActionResult> Edit()
     {
-        var edit = await _dbContext.Hospitals.SingleOrDefaultAsync(x => x.Id == id);
-        if (edit == null)
-            return RedirectToAction("HospitalList");
-        return View(edit);
+        var hospitals = await _dbContext.Hospitals.ToListAsync();     
+        return View(hospitals);
     }
 
     [HttpPost]
     public async Task<IActionResult> Edit(Hospital body)
     {
+        var search = await _dbContext.Hospitals.SingleOrDefaultAsync(x => x.NameHospital == body.NameHospital);
+    
+        return RedirectToAction("EditLogic", new {id = search.Id});
+    }
+    [HttpGet]
+    public async Task<IActionResult> EditLogic(int id)
+    {
+        var edit = await _dbContext.Hospitals.SingleOrDefaultAsync(x => x.Id == id);
+        
+     
+        return View(edit);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> EditLogic(Hospital search)
+    {
         if (ModelState.IsValid)
         {
-            _dbContext.Entry(body).State = EntityState.Modified;
-            _dbContext.Hospitals.Update(body);
+            _dbContext.Entry(search).State = EntityState.Modified;
+            _dbContext.Hospitals.Update(search);
 
             await _dbContext.SaveChangesAsync();
 
-            return RedirectToAction("Hospital", new {id = body.Id});
+            return RedirectToAction("Hospital", new {id = search.Id});
         }
 
-        return View(body);
+
+        return RedirectToAction("Edit", new {id = search.Id});
     }
 
-    public IActionResult Appoitment()
-    {
-        throw new NotImplementedException();
-    }
+    
+    
+    
+    
+    
+    
+    
+
+
+
 }

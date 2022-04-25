@@ -1,4 +1,4 @@
-@model List<Doctor>
+﻿@model List<Doctor>
 
 
 @{
@@ -51,10 +51,10 @@
 
 
 
-<form asp-controller ="Doctor" asp-action="Edit" class="container needs-validation mt-5" novalidate method="post" >
+<form asp-controller ="Doctor" asp-action="Delete" class="container needs-validation mt-5" novalidate method="post" >
 <div class="size mt-5 mb-5">
   <div class="row">
-    <label for="validationCustom04" class="form-label">Choose Hospital</label>
+    <label for="validationCustom04" class="form-label">Choose Doctor</label>
 
     <select class="form-select " id="validationCustom04" required name="NickName">
 
@@ -97,7 +97,7 @@
     </div>
   </div>
   <div class="size">
-    <button class="btn btn-primary mt-5 mb-5" type="submit">Edit Doctor</button>
+    <button class="btn btn-primary mt-5 mb-5" type="submit">Delete Hospital</button>
   </div>
 </form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>        

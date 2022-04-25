@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Hosp.Controllers;
 
@@ -83,44 +84,83 @@ public class DoctorController : Controller
         return View(doctor);
     }
 
-    public async Task<IActionResult> Delete(int id)
+    
+    
+    [HttpGet]
+    public async Task<IActionResult> Delete()
     {
-        var del = await _dbContext.Doctors.SingleOrDefaultAsync(x => x.ID == id);
-
-
+        var doctor = await _dbContext.Doctors.ToListAsync();     
+        return View(doctor);
+    }
+    [HttpPost]
+    public async Task<IActionResult> Delete(Doctor body)
+    {
+        var del = await _dbContext.Doctors.SingleOrDefaultAsync(x => x.NickName == body.NickName);
         _dbContext.Doctors.Remove(del);
         await _dbContext.SaveChangesAsync();
 
 
         return RedirectToAction(nameof(List));
     }
+    
 
-    public async Task<IActionResult> Edit(int id)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    [HttpGet]
+    public async Task<IActionResult> Edit()
     {
-        var edit = await _dbContext.Doctors.SingleOrDefaultAsync(x => x.ID == id);
-
-        var viewModel = new AddDoctorViewModel();
-        viewModel.Doctor = edit;
-        viewModel.Hospitals = await _dbContext.Hospitals.ToListAsync();
-        return View(viewModel);
+        var doctor = await _dbContext.Doctors.ToListAsync();     
+        return View(doctor);
     }
 
-    public async Task<IActionResult> EditDoctor(Doctor body)
+    [HttpPost]
+    public async Task<IActionResult> Edit(Doctor body)
+    {
+        var search = await _dbContext.Doctors.SingleOrDefaultAsync(x => x.NickName == body.NickName);
+    
+        return RedirectToAction("EditLogic", new {id = search.ID});
+    }
+    
+    
+    [HttpGet]
+    public async Task<IActionResult> EditLogic(int id)
+    {
+            var edit = await _dbContext.Doctors.SingleOrDefaultAsync(x => x.ID == id);
+        
+            var viewModel = new AddDoctorViewModel();
+            viewModel.Doctor = edit;
+            viewModel.Hospitals = await _dbContext.Hospitals.ToListAsync();
+            return View(viewModel);
+        }
+
+    [HttpPost]
+    public async Task<IActionResult> EditLogic(Doctor search)
     {
         if (ModelState.IsValid)
         {
-            _dbContext.Entry(body).State = EntityState.Modified;
-            _dbContext.Doctors.Update(body);
+            _dbContext.Entry(search).State = EntityState.Modified;
+            _dbContext.Doctors.Update(search);
 
             await _dbContext.SaveChangesAsync();
 
-            return RedirectToAction("NewDoctor", new {id = body.ID});
+            return RedirectToAction("NewDoctor", new {id = search.ID});
         }
 
 
-        return RedirectToAction("Edit", new {id = body.ID});
+        return RedirectToAction("Edit", new {id = search.ID});
     }
 
+  
     [HttpGet]
     public async Task<IActionResult> Appoitment(int id)
     {
@@ -164,9 +204,6 @@ public class DoctorController : Controller
     {
         return View();
     }
-    [HttpGet]
-    public async  Task<IActionResult> Edt()
-    {
-        return View();
-    }
+
+
 }

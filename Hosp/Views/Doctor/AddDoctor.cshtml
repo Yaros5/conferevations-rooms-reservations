@@ -29,7 +29,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link disabled " aria-current="page" href="#">Home</a>
+              <a class="nav-link disabled " asp-controller="Doctor" asp-action="">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" asp-controller="Doctor" asp-action="List">Doctor</a>
@@ -95,7 +95,7 @@
   <div class="input-group has-validation">
         
     <div class="size">
-      <input name = "PhoneNumber" type="number" class="form-control input_size " id="validationCustom02" value="@Model.Doctor.PhoneNumber" required>
+      <input name = "PhoneNumber" type="text" class="form-control input_size " id="validationCustom02" value="@Model.Doctor.PhoneNumber" required>
     </div>
     <div class="invalid-feedback">
       Please choose a username.
