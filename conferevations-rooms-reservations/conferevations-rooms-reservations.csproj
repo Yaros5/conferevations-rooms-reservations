@@ -1,0 +1,62 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <AssemblyName>conferevations-rooms-reservations</AssemblyName>
+        <RootNamespace>conferevations-rooms-reservations</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.5" />
+      <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="6.0.5" />
+      <PackageReference Include="Microsoft.Data.SqlClient" Version="4.1.0" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.5">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.5" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.5" />
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+      <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="wwwroot" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Doctor\AddDoctor.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Doctor\Appoitment.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Doctor\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Doctor\Doctor.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Doctor\Done.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Doctor\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Doctor\EditLogic.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Doctor\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Doctor\List.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Doctor\NewDoctor.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Doctor\Sad.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Privacy.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Hospital\Add.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Hospital\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Hospital\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Hospital\EditLogic.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Hospital\Hospital.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Hospital\HospitalList.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Register\Patient.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Register\Registred.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Register\SignIn.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Register\Welcome.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\Error.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\_ValidationScriptsPartial.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\_ViewImports.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\_ViewStart.cshtml" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\script.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\js\site.js" />
+    </ItemGroup>
+
+</Project>
